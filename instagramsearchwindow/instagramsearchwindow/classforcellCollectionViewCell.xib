@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellforlabel" id="gTV-IL-0wX" customClass="classforcellCollectionViewCell" customModule="instagramsearchwindow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="203" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="203" height="161"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQW-yW-NNf">
+                        <rect key="frame" x="80.5" y="70.5" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-NC-T6e">
+                        <rect key="frame" x="0.0" y="0.0" width="203" height="161"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uY6-NC-T6e" secondAttribute="trailing" id="5p2-xE-SvB"/>
+                <constraint firstItem="dQW-yW-NNf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Dwp-mD-erb"/>
+                <constraint firstAttribute="bottom" secondItem="uY6-NC-T6e" secondAttribute="bottom" id="SS1-Ce-hAX"/>
+                <constraint firstItem="uY6-NC-T6e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rQ5-7o-Ifk"/>
+                <constraint firstItem="uY6-NC-T6e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yhz-pN-aST"/>
+                <constraint firstItem="dQW-yW-NNf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zwn-24-G72"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="203" height="161"/>
+            <connections>
+                <outlet property="image" destination="uY6-NC-T6e" id="yao-cV-vPs"/>
+                <outlet property="label" destination="dQW-yW-NNf" id="gvv-IY-AFb"/>
+            </connections>
+            <point key="canvasLocation" x="-34.399999999999999" y="48.125937031484263"/>
+        </collectionViewCell>
+    </objects>
+</document>
