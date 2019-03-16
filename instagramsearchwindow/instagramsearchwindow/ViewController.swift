@@ -1,12 +1,37 @@
 import UIKit
 import Photos
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    // MARK:- IBOutlets
    @IBOutlet weak var post: UICollectionView!
     @IBOutlet weak var category: UICollectionView!
-    @IBOutlet weak var image: UIImageView!
-    
+    //MARK:- Variables
     var imageArray=[UIImage]()
+//    let titleOfAlbum = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
     
+}
+
+extension ViewController{
+    
+    //MARK:- Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        category.register(UINib(nibName: "classforcellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellforlabel")
+        category.delegate = self
+        category.dataSource = self
+        post.register(UINib(nibName: "ClassForAllignmentDataInFolder", bundle: nil), forCellWithReuseIdentifier: "cellforimage")
+        post.delegate = self
+        post.dataSource = self
+        grabPhotos()
+        
+    }
+    
+}
+
+extension ViewController{
+    
+    //MARK:- Collection View Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
@@ -17,25 +42,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
            let cell = category.dequeueReusableCell(withReuseIdentifier: "cellforlabel", for: indexPath) as! classforcellCollectionViewCell
         
             cell.image?.image = imageArray[indexPath.item]
+     //   cell.label.text = titleOfAlbum.object(at: indexPath.row).localizedTitle
 
         
          return cell
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+}
 
-        category.register(UINib(nibName: "classforcellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellforlabel")
-        category.delegate = self
-        category.dataSource = self
-        post.register(UINib(nibName: "ClassForAllignmentDataInFolder", bundle: nil), forCellWithReuseIdentifier: "cellforimage")
-        post.delegate = self
-        post.dataSource = self
-        grabPhotos()
-
-    }
+extension ViewController{
     
+    //MARK:- Methods
     func grabPhotos(){
         imageArray = []
         
